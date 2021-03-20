@@ -17,5 +17,16 @@ module.exports = webpackEnv => {
         ? 'js/[name].[contenthash:8].js'
         : 'js/bundle.js',
     },
+    module: {
+      rules: [
+        {
+          test: /\.jsx?/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
+      ],
+    },
   };
 };
