@@ -41,5 +41,8 @@ module.exports = webpackEnv => {
         },
       ],
     },
+    resolve: {
+      extensions: ['.jsx', '.js', '.json'],
+    },
   };
 };
