@@ -1,8 +1,10 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PROJECT_ROOT = path.resolve(__dirname);
 const SRC_PATH = path.resolve(__dirname, 'src');
 const BUILD_PATH = path.resolve(PROJECT_ROOT, 'build');
+const PUBLIC_INDEX = path.resolve(PROJECT_ROOT, 'public', 'index.html');
 
 module.exports = webpackEnv => {
   const mode = webpackEnv.WEBPACK_SERVE ? 'development' : 'production';
@@ -44,5 +46,6 @@ module.exports = webpackEnv => {
     resolve: {
       extensions: ['.jsx', '.js', '.json'],
     },
+    plugins: [new HtmlWebpackPlugin({ template: PUBLIC_INDEX })],
   };
 };
