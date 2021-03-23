@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const PROJECT_ROOT = path.resolve(__dirname);
 const SRC_PATH = path.resolve(__dirname, 'src');
@@ -46,6 +47,6 @@ module.exports = webpackEnv => {
     resolve: {
       extensions: ['.jsx', '.js', '.json'],
     },
-    plugins: [new HtmlWebpackPlugin({ template: PUBLIC_INDEX })],
+    plugins: [new HtmlWebpackPlugin({ template: PUBLIC_INDEX }), new Dotenv()],
   };
 };
