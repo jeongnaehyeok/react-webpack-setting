@@ -58,5 +58,12 @@ module.exports = webpackEnv => {
     cache: {
       type: isEnvDevelopment ? 'memory' : 'filesystem',
     },
+    devServer: {
+      port: 3000,
+      host: 'localhost',
+      open: true,
+      overlay: true,
+      stats: 'errors-warnings',
+    },
   };
 };
