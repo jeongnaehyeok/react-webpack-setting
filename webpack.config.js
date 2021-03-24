@@ -55,5 +55,8 @@ module.exports = webpackEnv => {
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin(),
     ],
+    cache: {
+      type: isEnvDevelopment ? 'memory' : 'filesystem',
+    },
   };
 };
